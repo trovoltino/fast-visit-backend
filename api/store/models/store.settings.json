@@ -12,7 +12,8 @@
   },
   "attributes": {
     "store_id": {
-      "type": "uid"
+      "type": "uid",
+      "required": true
     },
     "name": {
       "type": "string"
@@ -33,6 +34,21 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "user_id": {
+      "type": "biginteger",
+      "required": true
+    },
+    "users": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "store_ids"
+    },
+    "schedule": {
+      "model": "schedule"
+    },
+    "locations": {
+      "collection": "location"
     }
   }
 }
